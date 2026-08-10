@@ -18,7 +18,8 @@
 body { font-family: "Poppins", sans-serif; }
 
 .font-hamilton,
-.section-hero .script-name { font-family: "Hamilton Script"; }
+.section-hero .script-name,
+.livestream-section .stream-preview-copy strong { font-family: "Hamilton Script"; }
     
 .memorial-nav .brand-text,
 .section-title,
@@ -27,4 +28,10 @@ body { font-family: "Poppins", sans-serif; }
 .section-hero .life-dates,
 .section-service .service-icon,
 .service-section .service-card,
-.section-about .memorial-quote { font-family: "Calm Serif", serif; }
+.section-about .memorial-quote,
+.donation-heading,
+.gallery-section .gallery-placeholder,
+.modal-placeholder,
+.livestream-section .stream-date-box strong,
+.livestream-section .stream-schedule-item h4,
+.livestream-section .stream-schedule-title { font-family: "Calm Serif", serif; }
