@@ -1,0 +1,342 @@
+:root {
+  --ink: #1d1d1d;
+  --ink-soft: #2a2927;
+  --gold: #c99045;
+  --gold-soft: #ddb06d;
+  --ivory: #f5f0e7;
+  --warm: #e9e1d6;
+  --muted: #756f67;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--ink);
+  background: var(--ivory);
+  overflow-x: hidden;
+}
+
+.memorial-nav {
+  transition: background .3s ease, padding .3s ease, box-shadow .3s ease;
+  padding: 1.1rem 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.62), transparent);
+}
+.memorial-nav.scrolled {
+  background: rgba(24,24,23,.96);
+  padding: .7rem 0;
+  box-shadow: 0 8px 30px rgba(0,0,0,.16);
+  backdrop-filter: blur(10px);
+}
+.brand-cross { color: var(--gold-soft); font-size: 1.1rem; }
+.brand-text { font-family: "Cormorant Garamond", serif; font-size: 1.25rem; letter-spacing: .04em; }
+.nav-link { font-size: .82rem; text-transform: uppercase; letter-spacing: .14em; margin-left: .55rem; }
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover { color: var(--gold-soft); }
+
+.hero-section {
+  min-height: 100svh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #141414;
+}
+.hero-image-wrap { position: absolute; inset: 0; }
+.hero-reference-image {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 32%;
+  filter: saturate(.82) brightness(.66);
+  transform: scale(1.03);
+}
+.hero-gradient {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(16,15,14,.28) 0%, rgba(16,15,14,.08) 38%, rgba(16,15,14,.78) 100%),
+    radial-gradient(circle at center 35%, transparent 0 22%, rgba(10,10,10,.22) 70%);
+}
+.hero-content { z-index: 2; padding-top: 8rem; padding-bottom: 7rem; }
+.hero-copy { text-shadow: 0 2px 20px rgba(0,0,0,.45); }
+.eyebrow { color: #fff; text-transform: uppercase; letter-spacing: .34em; font-size: clamp(.78rem, 1.4vw, 1.15rem); font-weight: 300; }
+.gold-rule { width: min(82%, 620px); height: 1px; background: var(--gold); margin-top: 1rem; }
+.display-name {
+  font-family: "Cormorant Garamond", serif; color: white; font-weight: 500;
+  font-size: clamp(5rem, 13vw, 10rem); line-height: .78; letter-spacing: -.035em; margin: 1.5rem 0 .1rem;
+}
+.script-name { font-family: "Allura", cursive; color: var(--gold-soft); font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: .85; margin-top: -.2rem; }
+.life-dates { color: #fff; font-family: "Cormorant Garamond", serif; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: .04em; margin-top: .8rem; }
+.cross { color: #fff; display: inline-block; margin: 0 .3rem; }
+.service-date { color: var(--gold-soft); font-size: clamp(1.25rem, 2.6vw, 2rem); letter-spacing: .06em; margin-top: 1.25rem; }
+.service-place { color: white; font-size: clamp(.92rem, 1.8vw, 1.2rem); }
+.wake-note { color: var(--gold-soft); font-size: clamp(.88rem, 1.7vw, 1.08rem); }
+.btn-memorial { border: 1px solid var(--gold-soft); color: white; border-radius: 0; text-transform: uppercase; font-size: .78rem; letter-spacing: .12em; background: rgba(0,0,0,.14); }
+.btn-memorial:hover { background: var(--gold); color: #151515; border-color: var(--gold); }
+.scroll-cue { position: absolute; z-index: 2; bottom: 1.25rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,.75); text-decoration: none; text-transform: uppercase; letter-spacing: .22em; font-size: .65rem; display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.scroll-line { display:block; width:1px; height:28px; background:linear-gradient(to bottom,var(--gold-soft),transparent); }
+
+.section-pad { padding: 7rem 0; }
+.bg-ivory { background: var(--ivory); }
+.bg-warm { background: var(--warm); }
+.section-kicker { color: var(--gold); text-transform: uppercase; letter-spacing: .24em; font-size: .72rem; font-weight: 600; }
+.section-title { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: clamp(2.8rem, 6vw, 4.7rem); line-height: .95; margin: .6rem 0 1rem; }
+.section-rule { width: 74px; height: 1px; background: var(--gold); margin-bottom: 1.75rem; }
+.lead-copy { font-family: "Cormorant Garamond", serif; font-size: 1.65rem; line-height: 1.4; color: #3d3934; }
+.body-copy { line-height: 1.85; color: #6f685f; font-size: .98rem; }
+.portrait-card { max-width: 460px; margin: auto; box-shadow: 0 28px 60px rgba(46,39,30,.18); overflow: hidden; background: #222; }
+.portrait-image { width: 100%; height: 600px; object-fit: cover; object-position: 50% 18%; transform: scale(1.05); }
+.memorial-quote { border-left: 2px solid var(--gold); margin: 2rem 0 0; padding: .4rem 0 .4rem 1.35rem; font-family: "Cormorant Garamond", serif; font-size: 1.35rem; font-style: italic; color: #504940; }
+
+.service-section { background: linear-gradient(rgba(25,24,22,.93), rgba(25,24,22,.96)), url('../img/teng-memorial.jpg') center/cover fixed; }
+.text-gold { color: var(--gold-soft) !important; }
+.service-card { border: 1px solid rgba(217,168,102,.4); padding: 2.2rem 1.5rem; text-align: center; background: rgba(255,255,255,.025); backdrop-filter: blur(3px); transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.service-card:hover { transform: translateY(-6px); border-color: var(--gold-soft); background: rgba(255,255,255,.05); }
+.service-icon { font-family: "Cormorant Garamond", serif; color: var(--gold-soft); font-size: 2.8rem; line-height: 1; }
+.service-card h3 { font-family: "Cormorant Garamond", serif; font-size: 2rem; margin: .8rem 0 1rem; }
+.service-card p { color: #d2cec7; margin-bottom: .3rem; }
+.service-main { color: #fff !important; font-weight: 500; }
+.btn-outline-memorial { border: 1px solid var(--gold-soft); color: var(--gold-soft); border-radius: 0; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
+.btn-outline-memorial:hover { background: var(--gold); border-color: var(--gold); color: #171717; }
+
+.gallery-item, .gallery-placeholder { border: 0; padding: 0; min-height: 260px; overflow: hidden; background: #d8cdbf; position: relative; }
+.gallery-item img { width:100%; height: 420px; object-fit: cover; object-position: 50% 18%; transition: transform .55s ease, filter .4s ease; filter: saturate(.82); }
+.gallery-item:hover img { transform: scale(1.04); filter: saturate(1); }
+.gallery-placeholder { display:flex; align-items:center; justify-content:center; text-align:center; font-family:"Cormorant Garamond",serif; font-size:1.35rem; color:#675d51; background: linear-gradient(135deg,#e5dbcf,#cfc1b0); transition: transform .25s ease; }
+.gallery-placeholder:hover { transform: translateY(-3px); }
+.gallery-wide { min-height: 220px; }
+#galleryModalBody img { max-height: 88vh; width: auto; max-width: 100%; object-fit: contain; }
+.modal-placeholder { min-height: 420px; display:grid; place-items:center; color:#e0d5c8; font-family:"Cormorant Garamond",serif; font-size:2rem; padding:2rem; background:linear-gradient(135deg,#2d2924,#171615); }
+
+.memory-form { background: #fffaf2; border: 1px solid #ddd0be; padding: clamp(1.5rem, 4vw, 2.6rem); box-shadow: 0 18px 45px rgba(67,55,40,.08); }
+.form-control { border-radius: 0; border: 1px solid #cfc4b5; background: rgba(255,255,255,.74); padding: .9rem 1rem; }
+.form-control:focus { border-color: var(--gold); box-shadow: 0 0 0 .2rem rgba(201,144,69,.12); }
+.form-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .11em; color: #6c6359; }
+.btn-memorial-dark { border-radius: 0; background: #22201e; color: white; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; }
+.btn-memorial-dark:hover { background: var(--gold); color: #171717; }
+.memory-entry { border-bottom: 1px solid #d8cdbc; padding: 1rem 0; }
+.memory-entry:last-child { border-bottom: 0; }
+.memory-entry-name { font-family: "Cormorant Garamond",serif; font-size:1.3rem; margin:0; }
+.memory-entry-meta { color: var(--gold); font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; }
+.memory-entry-text { color:#665f56; margin:.5rem 0 0; line-height:1.6; }
+.empty-memory { color:#857c71; font-style:italic; }
+
+.memorial-footer { background: #171716; color: #d8d0c7; border-top: 1px solid #352f2a; }
+.footer-cross { color: var(--gold-soft); font-size:1.6rem; }
+.footer-name { font-family:"Cormorant Garamond",serif; font-size:1.8rem; color:white; }
+.footer-dates { color:var(--gold-soft); letter-spacing:.14em; font-size:.84rem; }
+.footer-note { font-size:.82rem; letter-spacing:.08em; }
+
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (max-width: 991.98px) {
+  .memorial-nav { background: rgba(24,24,23,.92); }
+  .navbar-collapse { padding-top: .8rem; }
+  .nav-link { margin-left: 0; padding: .7rem 0; }
+  .hero-reference-image { object-position: center top; }
+  .hero-gradient { background: linear-gradient(to bottom, rgba(12,12,12,.2) 0%, rgba(12,12,12,.6) 58%, rgba(12,12,12,.94) 100%); }
+  .portrait-image { height: 520px; }
+  .service-section { background-attachment: scroll; }
+}
+
+@media (max-width: 575.98px) {
+  .section-pad { padding: 5rem 0; }
+  .hero-content { padding-top: 7rem; padding-bottom: 5.5rem; }
+  .eyebrow { letter-spacing: .2em; }
+  .display-name { font-size: 5.2rem; }
+  .script-name { font-size: 3.1rem; }
+  .portrait-image { height: 460px; }
+  .gallery-item img { height: 360px; }
+  .gallery-placeholder { min-height: 180px; font-size:1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .reveal { opacity:1; transform:none; }
+}
+
+/* Donation */
+.donation-section {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201,144,69,.12), transparent 35%),
+    linear-gradient(135deg, #171716 0%, #24211e 55%, #171716 100%);
+}
+.donation-intro { max-width: 720px; color: #cfc8bf; line-height: 1.8; }
+.donation-card {
+  overflow: hidden;
+  border: 1px solid rgba(221,176,109,.38);
+  background: rgba(255,255,255,.025);
+  box-shadow: 0 28px 70px rgba(0,0,0,.28);
+}
+.donation-qr-side {
+  min-height: 430px;
+  padding: 2.5rem 2rem;
+  background: #f4eee5;
+  color: var(--ink);
+}
+.donation-details-side { padding: clamp(2rem, 5vw, 3.5rem); color: white; }
+.donation-label {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .7rem;
+  font-weight: 600;
+}
+.donation-qr-side .donation-label { color: #9b6a2f; }
+.qr-frame {
+  width: min(230px, 78vw);
+  padding: 14px;
+  margin-bottom: 1rem;
+  background: white;
+  border: 1px solid #d3c4af;
+  box-shadow: 0 14px 32px rgba(52,43,34,.13);
+}
+.donation-qr { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
+.dummy-note { color: #7b7166; font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; }
+.donation-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  margin: 0 0 1rem;
+}
+.donation-copy { color: #cfc8bf; line-height: 1.75; margin-bottom: 1.8rem; }
+.bank-details { border-top: 1px solid rgba(221,176,109,.24); }
+.bank-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(221,176,109,.18);
+}
+.bank-detail-row > span { color: #aaa29a; font-size: .72rem; text-transform: uppercase; letter-spacing: .11em; }
+.bank-detail-row strong { color: #fff; font-weight: 500; text-align: right; }
+.copy-account-btn {
+  border: 1px solid var(--gold-soft);
+  background: transparent;
+  color: var(--gold-soft);
+  padding: .35rem .65rem;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  transition: background .2s ease, color .2s ease;
+}
+.copy-account-btn:hover { background: var(--gold); color: #171717; }
+.copy-status { min-height: 1.4rem; margin-top: .7rem; color: var(--gold-soft); font-size: .78rem; }
+.donation-warning {
+  margin-top: 1.1rem;
+  padding: .9rem 1rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(201,144,69,.08);
+  color: #cfc8bf;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 767.98px) {
+  .donation-qr-side { min-height: auto; }
+  .bank-detail-row { align-items: flex-start; flex-direction: column; gap: .45rem; }
+  .bank-detail-row strong { text-align: left; }
+}
+
+/* Live Stream */
+.livestream-section {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(201,144,69,.13), transparent 33%),
+    linear-gradient(145deg, #211e1a 0%, #111110 70%);
+  color: #fff;
+}
+.livestream-intro { max-width: 760px; color: #cfc8bf; line-height: 1.8; }
+.stream-player-card,
+.stream-schedule-card {
+  border: 1px solid rgba(221,176,109,.32);
+  background: rgba(255,255,255,.035);
+  box-shadow: 0 24px 60px rgba(0,0,0,.24);
+}
+.stream-preview {
+  min-height: 390px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(to top, rgba(13,13,12,.9), rgba(13,13,12,.18) 65%),
+    url('../img/teng-memorial.jpg') center 24% / cover no-repeat;
+}
+.stream-preview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0, rgba(0,0,0,.18) 70%);
+  pointer-events: none;
+}
+.stream-status {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 2;
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  padding: .45rem .7rem;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(12,12,12,.68);
+  backdrop-filter: blur(8px);
+  font-size: .68rem;
+  letter-spacing: .14em;
+  font-weight: 600;
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d94848;
+  box-shadow: 0 0 0 5px rgba(217,72,72,.15);
+  animation: livePulse 1.8s infinite;
+}
+@keyframes livePulse { 50% { box-shadow: 0 0 0 9px rgba(217,72,72,0); } }
+.stream-play {
+  position: relative;
+  z-index: 2;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.72);
+  background: rgba(20,19,18,.56);
+  color: #fff;
+  font-size: 1.5rem;
+  padding-left: .3rem;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+.stream-play:hover { transform: scale(1.06); background: var(--gold); border-color: var(--gold); color: #171717; }
+.stream-preview-copy {
+  position: absolute;
+  z-index: 2;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.4rem;
+}
+.stream-preview-copy span { display: block; color: var(--gold-soft); text-transform: uppercase; letter-spacing: .16em; font-size: .67rem; }
+.stream-preview-copy strong { display: block; margin-top: .35rem; font-family: "Cormorant Garamond",serif; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 500; }
+.stream-player-footer { padding: 1.4rem 1.5rem; }
+.stream-small-label { display: block; margin-bottom: .3rem; color: var(--gold-soft); text-transform: uppercase; letter-spacing: .16em; font-size: .66rem; font-weight: 600; }
+.btn-live { border-radius: 0; background: var(--gold); color: #171717; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 600; }
+.btn-live:hover { background: #e1ad69; color: #171717; }
+.stream-schedule-card { padding: clamp(1.6rem, 4vw, 2.4rem); }
+.stream-schedule-title { margin-bottom: 1.2rem; font-family: "Cormorant Garamond",serif; font-size: 2rem; font-weight: 500; }
+.stream-schedule-list { border-top: 1px solid rgba(221,176,109,.2); }
+.stream-schedule-item { display:flex; gap:1rem; align-items:center; padding:1.05rem 0; border-bottom:1px solid rgba(221,176,109,.16); }
+.stream-date-box { flex: 0 0 56px; width:56px; height:56px; display:grid; place-content:center; text-align:center; border:1px solid rgba(221,176,109,.45); color:var(--gold-soft); }
+.stream-date-box strong { display:block; font-family:"Cormorant Garamond",serif; font-size:1.45rem; line-height:1; font-weight:600; }
+.stream-date-box span { font-size:.58rem; letter-spacing:.14em; margin-top:.2rem; }
+.stream-schedule-item h4 { margin:0 0 .2rem; font-family:"Cormorant Garamond",serif; font-size:1.25rem; font-weight:500; }
+.stream-schedule-item p { margin:0; color:#aaa29a; font-size:.8rem; }
+.stream-note { margin-top:1rem; color:#8f8880; font-size:.72rem; line-height:1.6; }
+.stream-modal-content { background:#1a1917; color:white; border:1px solid rgba(221,176,109,.35); border-radius:0; }
+.stream-modal-placeholder { background: radial-gradient(circle at center, #2c2925, #111); border:1px solid rgba(221,176,109,.22); color:#d8d0c7; }
+.stream-modal-icon { width:62px; height:62px; border-radius:50%; display:grid; place-items:center; border:1px solid var(--gold-soft); color:var(--gold-soft); padding-left:.2rem; }
+.stream-modal-schedule { color:#bfb7ae; font-size:.82rem; }
+
+@media (max-width: 575.98px) {
+  .stream-preview { min-height: 310px; }
+  .stream-play { width: 68px; height: 68px; }
+}

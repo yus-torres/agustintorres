@@ -1,0 +1,30 @@
+/* Hamilton Script */
+@font-face {
+    font-family: 'Hamilton Script';
+    src: url('fonts/Hamilton_Script/Hamilton_Script.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Calm Serif */
+@font-face {
+    font-family: 'Calm Serif';
+    src: url('fonts/Calm_Serif/Calm_Serif.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Defaults */
+body { font-family: "Poppins", sans-serif; }
+
+.font-hamilton,
+.section-hero .script-name { font-family: "Hamilton Script"; }
+    
+.memorial-nav .brand-text,
+.section-title,
+.lead-copy,
+.section-hero .display-name,
+.section-hero .life-dates,
+.section-service .service-icon,
+.service-section .service-card,
+.section-about .memorial-quote { font-family: "Calm Serif", serif; }

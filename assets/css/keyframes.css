@@ -1,0 +1,14 @@
+@keyframes livePulse { 50% { box-shadow: 0 0 0 9px rgba(217,72,72,0); } }
+.stream-play {
+  position: relative;
+  z-index: 2;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.72);
+  background: rgba(20,19,18,.56);
+  color: #fff;
+  font-size: 1.5rem;
+  padding-left: .3rem;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
